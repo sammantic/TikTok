@@ -18,7 +18,7 @@ TikTok::TikTok(char (*boardIn)[4][4])
     
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            (*board)[i][j] = '-';        
+            (*board)[i][j] = 'x';        
         }
     }  
 }
@@ -40,7 +40,6 @@ int TikTok::checkRowWinner()
         }
         
         if (countX == 4 ) {
-            cout << i << " \t" << j <<"\n";
             winner = 1;
             break;
         }
@@ -139,8 +138,6 @@ void TikTok::selectAndSet(int pos, char val)
     row = pos / 4;
     col = (abs((pos - (row * 4))) - 1);
     (*board)[row][col] = val;
-    cout << "\n--------------------\n";
-    cout << row << " , " << col << " = " << val;
 
     return; 
     

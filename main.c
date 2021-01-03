@@ -18,10 +18,7 @@ int main()
     TikTok Match(&spaceBoard);
     Player *PlayerProfile;
     Match.displayBoard();
-    // ret = Match.checkRowWinner();
-    // ret = Match.checkColWinner();
-    // ret = Match.checkDioXwinner();
-    // ret = Match.checkDioYwinner();
+
     // Match.selectAndSet(6, 'x');
     // Match.selectAndSet(2, 'o');
     // Match.selectAndSet(16, 'x');
@@ -29,5 +26,13 @@ int main()
     // Match.displayBoard();
 
     PlayerProfile = enterPlayerNames();
+    ret = checkWinner(&Match);
+    string name;
+    int id;
+    cout << ret <<endl;
+
+    // cout << ((PlayerProfile[0]).getPlayerId() == ret )<< endl;
+    // cout << ((PlayerProfile[0]).getPlayerId() == ret )<< endl;
+ 
     return 0;
 }
