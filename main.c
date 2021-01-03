@@ -10,7 +10,9 @@ int main()
     // ret = Match.checkColWinner();
     // ret = Match.checkDioXwinner();
     // ret = Match.checkDioYwinner();
-    cout << ret;
-    
+    Match.selectAndSet(6, 'x');
+
+    Match.displayBoard();
+
     return 0;
 }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include <iomanip>
 #include <string>
 
@@ -13,6 +14,7 @@ public:
     int checkColWinner();
     int checkDioXwinner();
     int checkDioYwinner();
+    void selectAndSet(int pos, char val);
     void displayBoard();
 };
 
@@ -23,7 +25,7 @@ TikTok::TikTok(char (*boardIn)[4][4])
     
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            (*board)[i][j] = 'x';        
+            (*board)[i][j] = '-';        
         }
     }  
 }
@@ -131,6 +133,16 @@ int TikTok::checkDioYwinner()
         winner = 2;
     
     return winner;
+}
+
+void TikTok::selectAndSet(int pos, char val)
+{
+    int row;
+    int col;
+
+    row = pos / 4;
+    col = ((pos - 4) - 1);
+    (*board)[row][col] = val;
 }
 
 void TikTok::displayBoard() 
